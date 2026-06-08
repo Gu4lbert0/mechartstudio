@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata helps browsers, search engines, and social previews understand the page. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about M-Robotics, a robotics and mechanical engineering company focused on agriculture and industry.">
+    <title>About | M-Robotics</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared navigation keeps the site predictable across every static page. -->
+    <header class="site-header" data-header>
+        <nav class="navbar container" aria-label="Primary navigation">
+            <a class="brand" href="index.html" aria-label="M-Robotics home">
+                <img class="brand__logo" src="images/logo.png" alt="M-Robotics logo">
+                <span class="brand__name">M-Robotics</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+            <ul class="nav-menu" id="primary-menu" data-nav-menu>
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link active" href="about.html" aria-current="page">About</a></li>
+                <li><a class="nav-link" href="projects.html">Projects</a></li>
+                <li><a class="nav-link" href="services.html">Services</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Compact page hero provides context without taking over the page. -->
+        <section class="page-hero">
+            <div class="container page-hero__inner">
+                <p class="eyebrow">About M-Robotics</p>
+                <h1>Mechanical engineering and robotics for real environments.</h1>
+                <p>M-Robotics develops robotics systems, automation solutions, mechanical engineering designs, and agricultural technology with a practical product-development mindset.</p>
+            </div>
+        </section>
+
+        <!-- About sections are arranged as reusable cards for clarity and responsive stacking. -->
+        <section class="section" aria-labelledby="about-sections-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Company focus</p>
+                    <h2 id="about-sections-title">Built around useful engineering</h2>
+                </div>
+
+                <div class="info-grid">
+                    <article class="info-card">
+                        <span class="info-card__index">01</span>
+                        <h3>Company Mission</h3>
+                        <p>To create dependable robotics and automation systems that reduce physical workload, improve productivity, and help technical teams move from concept to working hardware.</p>
+                    </article>
+
+                    <article class="info-card">
+                        <span class="info-card__index">02</span>
+                        <h3>Mechanical Engineering Expertise</h3>
+                        <p>M-Robotics applies mechanical design, CAD modeling, fabrication planning, and prototype iteration to machines that must operate under real mechanical constraints.</p>
+                    </article>
+
+                    <article class="info-card">
+                        <span class="info-card__index">03</span>
+                        <h3>Robotics Development</h3>
+                        <p>The company works on robotic platforms that combine mobility, sensing, control systems, and structured mechanical architecture for field and industrial use.</p>
+                    </article>
+
+                    <article class="info-card">
+                        <span class="info-card__index">04</span>
+                        <h3>Agricultural Technology Focus</h3>
+                        <p>M-Robotics designs solutions for agricultural environments, including utility vehicles, crop sensing, yield estimation, and automation concepts for field productivity.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p>&copy; 2026 M-Robotics. All Rights Reserved.</p>
+            <a href="https://mechartstudio.com" aria-label="Visit mechartstudio.com">mechartstudio.com</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard responsive metadata and page-specific search description. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore M-Robotics projects including UGV co-robots, fruit counting systems, autonomous drones, and CNC machine concepts.">
+    <title>Projects | M-Robotics</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared navigation. The active class marks the current page for users. -->
+    <header class="site-header" data-header>
+        <nav class="navbar container" aria-label="Primary navigation">
+            <a class="brand" href="index.html" aria-label="M-Robotics home">
+                <img class="brand__logo" src="images/logo.png" alt="M-Robotics logo">
+                <span class="brand__name">M-Robotics</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+            <ul class="nav-menu" id="primary-menu" data-nav-menu>
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link active" href="projects.html" aria-current="page">Projects</a></li>
+                <li><a class="nav-link" href="services.html">Services</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container page-hero__inner">
+                <p class="eyebrow">Project portfolio</p>
+                <h1>Robotics, sensing, and machine design projects.</h1>
+                <p>Representative work spanning field robotics, computer vision, UAVs, and novel mechanical systems.</p>
+            </div>
+        </section>
+
+        <!-- Project cards use the same component as the home page, with fuller descriptions here. -->
+        <section class="section" aria-labelledby="projects-list-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Engineering work</p>
+                    <h2 id="projects-list-title">Projects</h2>
+                </div>
+
+                <div class="card-grid card-grid--two">
+                    <article class="project-card project-card--large">
+                        <img src="images/placeholder-project.jpg" alt="UGV Co-Robot project placeholder">
+                        <div class="project-card__body">
+                            <h3>UGV Co-Robot</h3>
+                            <p>Autonomous and remote-controlled utility vehicle designed to reduce worker fatigue and improve productivity in agricultural environments.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-card--large">
+                        <img src="images/placeholder-project.jpg" alt="Fruit Counting System project placeholder">
+                        <div class="project-card__body">
+                            <h3>Fruit Counting System</h3>
+                            <p>Computer vision based yield estimation platform utilizing depth cameras, GPS, and mapping technology.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-card--large">
+                        <img src="images/placeholder-project.jpg" alt="Autonomous Drone Platform project placeholder">
+                        <div class="project-card__body">
+                            <h3>Autonomous Drone Platform</h3>
+                            <p>Custom UAV platform for mapping, sensing, and field data collection.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-card--large">
+                        <img src="images/placeholder-project.jpg" alt="Circular Rail CNC Machine project placeholder">
+                        <div class="project-card__body">
+                            <h3>Circular Rail CNC Machine</h3>
+                            <p>Novel CNC architecture utilizing a circular rail and rotating spindle system.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p>&copy; 2026 M-Robotics. All Rights Reserved.</p>
+            <a href="https://mechartstudio.com" aria-label="Visit mechartstudio.com">mechartstudio.com</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

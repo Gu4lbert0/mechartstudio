@@ -1,0 +1,683 @@
+/* ==========================================================================
+   M-Robotics Static Website Styles
+   --------------------------------------------------------------------------
+   This stylesheet is intentionally dependency-free so the site can be deployed
+   directly to GitHub Pages. Classes are reusable across all pages.
+   ========================================================================== */
+
+/* CSS custom properties centralize the visual system for easy future updates. */
+:root {
+    --color-black: #0f1115;
+    --color-ink: #1f242b;
+    --color-muted: #5f6875;
+    --color-line: #dfe3e8;
+    --color-soft: #f5f7f9;
+    --color-white: #ffffff;
+    --color-accent: #2c6f73;
+    --color-accent-dark: #1f5558;
+    --shadow-soft: 0 20px 50px rgba(15, 17, 21, 0.08);
+    --radius: 8px;
+    --container: 1160px;
+    --header-height: 76px;
+}
+
+/* Smooth scrolling supports anchor navigation without JavaScript. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Border-box sizing makes layouts predictable across responsive breakpoints. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Base typography uses system fonts for performance and zero external assets. */
+body {
+    margin: 0;
+    color: var(--color-ink);
+    background: var(--color-white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
+
+/* Images scale down naturally and never overflow their containers. */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Link styling is restrained and aligned with the minimalist design direction. */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Headings use strong weight and compact line-height for an engineering feel. */
+h1,
+h2,
+h3 {
+    margin: 0;
+    color: var(--color-black);
+    font-weight: 700;
+    line-height: 1.12;
+}
+
+h1 {
+    font-size: clamp(2.35rem, 5vw, 4.75rem);
+    max-width: 900px;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    margin: 0;
+}
+
+/* Accessible skip link appears only when focused by keyboard users. */
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1000;
+    transform: translateY(-150%);
+    padding: 10px 14px;
+    color: var(--color-white);
+    background: var(--color-black);
+    border-radius: var(--radius);
+    transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* Container is reused on all pages to keep content aligned and readable. */
+.container {
+    width: min(100% - 40px, var(--container));
+    margin-inline: auto;
+}
+
+/* Header stays visible while scrolling and receives a subtle shadow via JS. */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: var(--header-height);
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid var(--color-line);
+    backdrop-filter: blur(14px);
+}
+
+.site-header.is-scrolled {
+    box-shadow: 0 10px 28px rgba(15, 17, 21, 0.08);
+}
+
+/* Navbar uses flex layout on desktop and switches to a dropdown on mobile. */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--header-height);
+    gap: 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: max-content;
+}
+
+.brand__logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+}
+
+.brand__name {
+    color: var(--color-black);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 14px;
+    color: var(--color-muted);
+    border-radius: 6px;
+    font-size: 0.94rem;
+    font-weight: 600;
+    transition: color 180ms ease, background 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+    color: var(--color-black);
+    background: var(--color-soft);
+}
+
+/* The hamburger is hidden on desktop and displayed by media query below. */
+.nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    background: var(--color-white);
+    cursor: pointer;
+}
+
+.nav-toggle__bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+    background: var(--color-black);
+    transition: transform 180ms ease, opacity 180ms ease;
+}
+
+/* Hero uses a real image asset as requested while preserving readable text. */
+.hero {
+    position: relative;
+    min-height: calc(100vh - var(--header-height));
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    border-bottom: 1px solid var(--color-line);
+}
+
+.hero__media {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.82) 48%, rgba(255, 255, 255, 0.2) 100%), url("../images/hero.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 88px;
+}
+
+.hero__logo {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 28px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.hero__summary {
+    max-width: 660px;
+    margin-top: 22px;
+    color: var(--color-muted);
+    font-size: 1.12rem;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
+}
+
+/* Eyebrow text is reused for section labels and keeps hierarchy consistent. */
+.eyebrow {
+    margin-bottom: 14px;
+    color: var(--color-accent);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Buttons are used for true actions and prominent navigation only. */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.button:hover,
+.button:focus {
+    transform: translateY(-2px);
+}
+
+.button--primary {
+    color: var(--color-white);
+    background: var(--color-black);
+}
+
+.button--primary:hover,
+.button--primary:focus {
+    background: var(--color-accent-dark);
+}
+
+/* General section spacing is shared by home, projects, services, and contact. */
+.section {
+    padding-block: 86px;
+}
+
+.section--muted {
+    background: var(--color-soft);
+    border-block: 1px solid var(--color-line);
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 34px;
+}
+
+.section-heading p:last-child {
+    margin-top: 14px;
+    color: var(--color-muted);
+}
+
+/* Page hero is more compact than the home hero for interior pages. */
+.page-hero {
+    padding-block: 82px;
+    background: var(--color-soft);
+    border-bottom: 1px solid var(--color-line);
+}
+
+.page-hero__inner {
+    max-width: 850px;
+}
+
+.page-hero p:last-child {
+    max-width: 720px;
+    margin-top: 18px;
+    color: var(--color-muted);
+    font-size: 1.08rem;
+}
+
+/* Grid utilities keep repeated card layouts consistent across the site. */
+.card-grid,
+.info-grid,
+.service-grid {
+    display: grid;
+    gap: 22px;
+}
+
+.card-grid--four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card,
+.info-card,
+.service-card,
+.contact-panel,
+.contact-form {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-white);
+    box-shadow: 0 1px 0 rgba(15, 17, 21, 0.03);
+}
+
+.project-card {
+    overflow: hidden;
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: #c6cdd4;
+    box-shadow: var(--shadow-soft);
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: var(--color-soft);
+}
+
+.project-card__body {
+    padding: 22px;
+}
+
+.project-card__body p {
+    margin-top: 10px;
+    color: var(--color-muted);
+}
+
+.project-card--large .project-card__body {
+    padding: 26px;
+}
+
+/* The split layout supports short text blocks next to summaries or actions. */
+.split {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 54px;
+    align-items: start;
+}
+
+.feature-list {
+    color: var(--color-muted);
+    font-size: 1.05rem;
+}
+
+.text-link {
+    display: inline-flex;
+    margin-top: 18px;
+    color: var(--color-black);
+    font-weight: 800;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.text-link:hover,
+.text-link:focus {
+    color: var(--color-accent-dark);
+}
+
+/* About page cards use numeric labels for a precise engineering tone. */
+.info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.info-card,
+.service-card {
+    padding: 28px;
+    transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.info-card:hover,
+.service-card:hover {
+    transform: translateY(-3px);
+    border-color: #c6cdd4;
+    box-shadow: var(--shadow-soft);
+}
+
+.info-card__index {
+    display: inline-flex;
+    margin-bottom: 34px;
+    color: var(--color-accent);
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.info-card p,
+.service-card p {
+    margin-top: 12px;
+    color: var(--color-muted);
+}
+
+/* Services fit three columns on wide screens and collapse naturally. */
+.service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Contact page pairs business details with a clear static form interface. */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.contact-panel,
+.contact-form {
+    padding: 30px;
+}
+
+.contact-panel > p {
+    color: var(--color-muted);
+}
+
+.contact-details {
+    display: grid;
+    gap: 18px;
+    margin: 28px 0 0;
+}
+
+.contact-details div {
+    padding-top: 18px;
+    border-top: 1px solid var(--color-line);
+}
+
+.contact-details dt {
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.contact-details dd {
+    margin: 6px 0 0;
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+.contact-details a:hover,
+.contact-details a:focus {
+    color: var(--color-accent-dark);
+}
+
+.contact-form {
+    display: grid;
+    gap: 18px;
+}
+
+.form-field {
+    display: grid;
+    gap: 8px;
+}
+
+.form-field label {
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    padding: 13px 14px;
+    color: var(--color-black);
+    background: var(--color-white);
+    font: inherit;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.form-field textarea {
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(44, 111, 115, 0.12);
+}
+
+.form-note {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+/* Footer is intentionally quiet and consistent across every page. */
+.site-footer {
+    padding-block: 28px;
+    color: var(--color-muted);
+    background: var(--color-black);
+}
+
+.site-footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.site-footer a {
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+    color: #d8f0ef;
+}
+
+/* Tablet breakpoint reduces columns while preserving comfortable spacing. */
+@media (max-width: 980px) {
+    .card-grid--four,
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .split,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile navigation and stacked content rules. */
+@media (max-width: 760px) {
+    :root {
+        --header-height: 68px;
+    }
+
+    .container {
+        width: min(100% - 28px, var(--container));
+    }
+
+    .brand__logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-toggle.is-open .nav-toggle__bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.is-open .nav-toggle__bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.is-open .nav-toggle__bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        display: grid;
+        gap: 0;
+        padding: 10px 14px 16px;
+        background: var(--color-white);
+        border-bottom: 1px solid var(--color-line);
+        box-shadow: var(--shadow-soft);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .nav-menu.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero__media {
+        background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.88) 100%), url("../images/hero.jpg");
+    }
+
+    .hero__content,
+    .page-hero {
+        padding-block: 64px;
+    }
+
+    .section {
+        padding-block: 64px;
+    }
+
+    .card-grid--four,
+    .card-grid--two,
+    .info-grid,
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Small-phone refinements keep form and card content from feeling cramped. */
+@media (max-width: 420px) {
+    .hero__logo {
+        width: 62px;
+        height: 62px;
+    }
+
+    .project-card__body,
+    .project-card--large .project-card__body,
+    .info-card,
+    .service-card,
+    .contact-panel,
+    .contact-form {
+        padding: 22px;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

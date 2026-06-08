@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic document metadata for correct rendering and GitHub Pages compatibility. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="M-Robotics develops robotics systems, automation solutions, mechanical engineering designs, and agricultural technology.">
+    <title>M-Robotics | Engineering Robotics for Agriculture and Industry</title>
+
+    <!-- Relative paths keep this site portable for GitHub Pages project hosting. -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip link improves keyboard accessibility without changing the visual design. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared site header and navigation. The same structure is repeated on every page. -->
+    <header class="site-header" data-header>
+        <nav class="navbar container" aria-label="Primary navigation">
+            <a class="brand" href="index.html" aria-label="M-Robotics home">
+                <img class="brand__logo" src="images/logo.png" alt="M-Robotics logo">
+                <span class="brand__name">M-Robotics</span>
+            </a>
+
+            <!-- Hamburger button appears on small screens and is wired up in js/main.js. -->
+            <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+
+            <ul class="nav-menu" id="primary-menu" data-nav-menu>
+                <li><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="projects.html">Projects</a></li>
+                <li><a class="nav-link" href="services.html">Services</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero introduces the company with a direct engineering-focused message. -->
+        <section class="hero">
+            <div class="hero__media" role="img" aria-label="Robotics engineering workspace"></div>
+            <div class="container hero__content">
+                <img class="hero__logo" src="images/logo.png" alt="M-Robotics logo placeholder">
+                <p class="eyebrow">Robotics, automation, mechanical design</p>
+                <h1>Engineering Robotics for Agriculture and Industry</h1>
+                <p class="hero__summary">M-Robotics develops practical robotics systems, automation solutions, mechanical engineering designs, and agricultural technology for demanding field and industrial environments.</p>
+                <div class="hero__actions">
+                    <a class="button button--primary" href="projects.html">View Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured projects preview the portfolio and link to the fuller Projects page. -->
+        <section class="section" aria-labelledby="featured-projects-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Selected work</p>
+                    <h2 id="featured-projects-title">Featured Projects</h2>
+                    <p>Engineering concepts and prototypes focused on autonomy, sensing, machine design, and agricultural productivity.</p>
+                </div>
+
+                <div class="card-grid card-grid--four">
+                    <article class="project-card">
+                        <img src="images/placeholder-project.jpg" alt="UGV Co-Robot project placeholder">
+                        <div class="project-card__body">
+                            <h3>UGV Co-Robot</h3>
+                            <p>Utility robotics for field support, remote operation, and autonomous assistance.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="images/placeholder-project.jpg" alt="Fruit Counting System project placeholder">
+                        <div class="project-card__body">
+                            <h3>Fruit Counting System</h3>
+                            <p>Computer vision and mapping tools for agricultural yield estimation.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="images/placeholder-project.jpg" alt="Autonomous Drone Platform project placeholder">
+                        <div class="project-card__body">
+                            <h3>Autonomous Drone Platform</h3>
+                            <p>Custom UAV systems for mapping, sensing, and field data collection.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="images/placeholder-project.jpg" alt="Circular Rail CNC Machine project placeholder">
+                        <div class="project-card__body">
+                            <h3>Circular Rail CNC Machine</h3>
+                            <p>Novel CNC architecture using circular motion and a rotating spindle system.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capability band summarizes what the company does without becoming a marketing landing page. -->
+        <section class="section section--muted" aria-labelledby="capabilities-title">
+            <div class="container split">
+                <div>
+                    <p class="eyebrow">Engineering capability</p>
+                    <h2 id="capabilities-title">From mechanical concept to working prototype</h2>
+                </div>
+                <div class="feature-list">
+                    <p>M-Robotics combines mechanical engineering, CAD design, embedded systems thinking, and field-focused automation strategy.</p>
+                    <a class="text-link" href="services.html">Explore services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shared footer appears on every page. -->
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p>&copy; 2026 M-Robotics. All Rights Reserved.</p>
+            <a href="https://mechartstudio.com" aria-label="Visit mechartstudio.com">mechartstudio.com</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

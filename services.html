@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page metadata keeps the service page cleanly indexable and responsive. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="M-Robotics services include mechanical design, CAD modeling, robotics development, prototyping, agricultural automation, and product development.">
+    <title>Services | M-Robotics</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Repeated static navigation avoids build tooling and stays GitHub Pages friendly. -->
+    <header class="site-header" data-header>
+        <nav class="navbar container" aria-label="Primary navigation">
+            <a class="brand" href="index.html" aria-label="M-Robotics home">
+                <img class="brand__logo" src="images/logo.png" alt="M-Robotics logo">
+                <span class="brand__name">M-Robotics</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+            <ul class="nav-menu" id="primary-menu" data-nav-menu>
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="projects.html">Projects</a></li>
+                <li><a class="nav-link active" href="services.html" aria-current="page">Services</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container page-hero__inner">
+                <p class="eyebrow">Services</p>
+                <h1>Engineering support for robotics and automation projects.</h1>
+                <p>Services cover early concepts, CAD development, prototypes, mechanical systems, robotics platforms, and agriculture-focused automation.</p>
+            </div>
+        </section>
+
+        <!-- Service cards are concise so visitors can scan capability areas quickly. -->
+        <section class="section" aria-labelledby="services-list-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Capabilities</p>
+                    <h2 id="services-list-title">Services</h2>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card">
+                        <h3>Mechanical Design</h3>
+                        <p>Machine architecture, structural layouts, mechanisms, brackets, mounts, assemblies, and practical hardware design.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <h3>CAD Modeling</h3>
+                        <p>Detailed 3D models, design iteration, assembly planning, and documentation-ready geometry for manufacturing workflows.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <h3>Robotics Development</h3>
+                        <p>Robotic platform concepts, sensor integration planning, mobile systems, and automation-focused mechanical development.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <h3>Prototype Development</h3>
+                        <p>Functional prototypes that help validate design assumptions, mechanical performance, and product direction.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <h3>Agricultural Automation</h3>
+                        <p>Automation systems for field productivity, crop sensing, worker assistance, and data collection in agricultural environments.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <h3>Product Development</h3>
+                        <p>Support from concept definition through design refinement, prototype builds, and early product engineering decisions.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p>&copy; 2026 M-Robotics. All Rights Reserved.</p>
+            <a href="https://mechartstudio.com" aria-label="Visit mechartstudio.com">mechartstudio.com</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
