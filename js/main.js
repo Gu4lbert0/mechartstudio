@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const navMenu = document.querySelector("[data-nav-menu]");
     const contactForm = document.querySelector(".contact-form");
     const formNote = document.querySelector("[data-form-note]");
+    const aboutToggle = document.querySelector("[data-about-toggle]");
+    const aboutMore = document.querySelector("[data-about-more]");
+    const revealElements = document.querySelectorAll("[data-reveal]");
 
     /*
      * Adds or removes a shadow class when the user scrolls. This gives the
@@ -52,6 +55,52 @@ document.addEventListener("DOMContentLoaded", () => {
                 navToggle.setAttribute("aria-label", "Open navigation menu");
             });
         });
+    }
+
+    /*
+     * Expand and collapse the About Me biography. max-height is set from the
+     * element's scrollHeight so the transition stays smooth even if text wraps
+     * differently across screen sizes.
+     */
+    if (aboutToggle && aboutMore) {
+        const aboutCard = aboutToggle.closest(".about-me-card");
+
+        aboutToggle.addEventListener("click", () => {
+            const isExpanded = aboutToggle.getAttribute("aria-expanded") === "true";
+            const shouldExpand = !isExpanded;
+
+            aboutToggle.setAttribute("aria-expanded", String(shouldExpand));
+            aboutToggle.textContent = shouldExpand ? "Show Less" : "Read More";
+            aboutCard?.classList.toggle("is-expanded", shouldExpand);
+            aboutMore.style.maxHeight = shouldExpand ? `${aboutMore.scrollHeight}px` : "0px";
+        });
+
+        window.addEventListener("resize", () => {
+            if (aboutToggle.getAttribute("aria-expanded") === "true") {
+                aboutMore.style.maxHeight = `${aboutMore.scrollHeight}px`;
+            }
+        });
+    }
+
+    /*
+     * Fade sections into view when supported. If IntersectionObserver is not
+     * available, content is shown immediately so older browsers still work.
+     */
+    if (revealElements.length > 0) {
+        if ("IntersectionObserver" in window) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.18 });
+
+            revealElements.forEach((element) => revealObserver.observe(element));
+        } else {
+            revealElements.forEach((element) => element.classList.add("is-visible"));
+        }
     }
 
     /*

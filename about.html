@@ -4,7 +4,7 @@
     <!-- Metadata helps browsers, search engines, and social previews understand the page. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about M-Robotics, a robotics and mechanical engineering company focused on agriculture and industry.">
+    <meta name="description" content="Learn about Gualberto M. Hernandez E., M-Robotics, and engineering work in robotics, mechanical design, and agricultural technology.">
     <title>About | M-Robotics</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -34,58 +34,48 @@
     </header>
 
     <main id="main-content">
-        <!-- Compact page hero provides context without taking over the page. -->
-        <section class="page-hero">
-            <div class="container page-hero__inner">
-                <p class="eyebrow">About M-Robotics</p>
-                <h1>Mechanical engineering and robotics for real environments.</h1>
-                <p>M-Robotics develops robotics systems, automation solutions, mechanical engineering designs, and agricultural technology with a practical product-development mindset.</p>
+        <!-- About Me summary gives recruiters and collaborators quick personal context. -->
+        <section class="section about-me-section" aria-labelledby="about-me-title" data-reveal>
+            <div class="container about-me__container">
+                <div class="about-me-actions" aria-label="Profile links">
+                    <a class="profile-action" href="https://www.linkedin.com/in/gualberto-hernandez-90460060" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile">LinkedIn</a>
+                    <a class="profile-action" href="assets/Engineering-Resume.pdf" download aria-label="Download resume PDF">Resume</a>
+                </div>
+
+                <article class="about-me-card">
+                    <span class="about-me-card__accent" aria-hidden="true"></span>
+                    <div class="about-me-profile">
+                        <img class="about-me-profile__photo" src="images/profile-photo.png" alt="Portrait placeholder for Gualberto M. Hernandez E.">
+                        <h1 class="about-me-profile__name" id="about-me-title">Gualberto M. Hernandez E.</h1>
+                    </div>
+
+                    <div class="about-me__content" id="about-me-content">
+                        <p>Mechanical and R&amp;D Engineer with experience leading multidisciplinary engineering projects from concept through manufacturing, integration, testing, and deployment. His work spans mechanical design, manufacturing, electrical systems, wiring and harnessing, pneumatic systems, rapid prototyping, robotics integration, and project leadership.</p>
+
+                        <p>Throughout his career, Gualberto has worked on projects ranging from agricultural automation and robotic platforms to specialized industrial equipment. He has led the development of robotic systems that progressed from initial concepts to successful field demonstrations, working closely with clients, engineers, technicians, and manufacturing teams to deliver practical solutions to real-world problems.</p>
+
+                        <!-- Full biography is collapsed by default and expanded with the Read More button. -->
+                        <div class="about-me__more" id="about-me-more" data-about-more>
+                            <p>Gualberto served as Lead Engineer on the Gather Co-Robot project, where he was responsible for chassis design, electrical architecture, wiring harnesses, and system integration. The project progressed from concept to a functional prototype that was successfully demonstrated in real-world agricultural environments. He also contributed to the development of an Ekejime automation system, designing the pneumatic and electrical systems that supported successful client demonstrations. Earlier in his career, he developed an apple harvest robot prototype under a highly compressed timeline, applying mechanical, electrical, manufacturing, embedded systems, and programming knowledge to transform a concept into a working system.</p>
+
+                            <p>In addition to industry experience, Gualberto worked with Dr. YangQuan Chen's research laboratory at UC Merced. There, he guided student engineering teams, assisted with technical problem-solving, and supported robotic systems integration using ROS. His work focused on bridging mechanical, hardware, and software systems while developing prototype UGV platforms used to support larger research projects.</p>
+
+                            <p>What distinguishes Gualberto is his willingness to work across engineering disciplines and collaborate effectively with specialists from different technical backgrounds. He is driven by curiosity, a desire to understand how systems work, and a commitment to continuous learning. This mindset allows him to contribute wherever a project requires support, whether in mechanical design, manufacturing, integration, testing, or system development.</p>
+
+                            <p>His engineering philosophy is rooted in a principle he learned early in his career: "Physics First." Before pursuing complex solutions, he focuses on understanding the fundamental physics governing a system. From that foundation, he develops practical, manufacturable designs that can be tested, refined, and successfully deployed. He believes the most effective engineering solutions are those that not only function correctly but also solve meaningful problems for the people who use them.</p>
+
+                            <p>Today, Gualberto continues to pursue opportunities in mechanical engineering, research and development, mechatronics, agricultural robotics, and advanced robotic systems, with a particular interest in projects that bring together multiple engineering disciplines to create innovative real-world solutions.</p>
+                        </div>
+                    </div>
+
+                    <button class="button button--secondary about-me__toggle" type="button" aria-expanded="false" aria-controls="about-me-more" data-about-toggle>
+                        Read More
+                    </button>
+                </article>
             </div>
         </section>
 
-        <!-- About sections are arranged as reusable cards for clarity and responsive stacking. -->
-        <section class="section" aria-labelledby="about-sections-title">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Company focus</p>
-                    <h2 id="about-sections-title">Built around useful engineering</h2>
-                </div>
-
-                <div class="info-grid">
-                    <article class="info-card">
-                        <span class="info-card__index">01</span>
-                        <h3>Company Mission</h3>
-                        <p>To create dependable robotics and automation systems that reduce physical workload, improve productivity, and help technical teams move from concept to working hardware.</p>
-                    </article>
-
-                    <article class="info-card">
-                        <span class="info-card__index">02</span>
-                        <h3>Mechanical Engineering Expertise</h3>
-                        <p>M-Robotics applies mechanical design, CAD modeling, fabrication planning, and prototype iteration to machines that must operate under real mechanical constraints.</p>
-                    </article>
-
-                    <article class="info-card">
-                        <span class="info-card__index">03</span>
-                        <h3>Robotics Development</h3>
-                        <p>The company works on robotic platforms that combine mobility, sensing, control systems, and structured mechanical architecture for field and industrial use.</p>
-                    </article>
-
-                    <article class="info-card">
-                        <span class="info-card__index">04</span>
-                        <h3>Agricultural Technology Focus</h3>
-                        <p>M-Robotics designs solutions for agricultural environments, including utility vehicles, crop sensing, yield estimation, and automation concepts for field productivity.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <footer class="site-footer">
-        <div class="container site-footer__inner">
-            <p>&copy; 2026 M-Robotics. All Rights Reserved.</p>
-            <a href="https://mechartstudio.com" aria-label="Visit mechartstudio.com">mechartstudio.com</a>
-        </div>
-    </footer>
 
     <script src="js/main.js"></script>
 </body>

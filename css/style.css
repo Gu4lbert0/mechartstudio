@@ -285,6 +285,18 @@ p {
     background: var(--color-accent-dark);
 }
 
+.button--secondary {
+    color: var(--color-black);
+    background: var(--color-white);
+    border-color: var(--color-line);
+}
+
+.button--secondary:hover,
+.button--secondary:focus {
+    border-color: var(--color-accent);
+    background: var(--color-soft);
+}
+
 /* General section spacing is shared by home, projects, services, and contact. */
 .section {
     padding-block: 86px;
@@ -303,6 +315,161 @@ p {
 .section-heading p:last-child {
     margin-top: 14px;
     color: var(--color-muted);
+}
+
+/* Reveal animation is applied by IntersectionObserver for polished section entry. */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 700ms ease, transform 700ms ease;
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About Me card keeps long biography content readable for recruiters. */
+.about-me-section {
+    background:
+        linear-gradient(180deg, rgba(245, 247, 249, 0.86), rgba(255, 255, 255, 1));
+}
+
+.about-me__container {
+    max-width: 1080px;
+}
+
+.about-me-card {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(28px, 5vw, 52px);
+    border: 1px solid rgba(223, 227, 232, 0.9);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(16px);
+}
+
+.about-me-card__accent {
+    position: absolute;
+    top: clamp(28px, 5vw, 52px);
+    bottom: clamp(28px, 5vw, 52px);
+    left: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--color-accent), var(--color-black));
+}
+
+.about-me-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.profile-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 20px;
+    color: var(--color-white);
+    background: var(--color-black);
+    border: 1px solid rgba(15, 17, 21, 0.18);
+    border-radius: 10px;
+    font-weight: 800;
+    line-height: 1;
+    box-shadow: 0 2px 0 rgba(15, 17, 21, 0.35);
+    transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.profile-action:hover,
+.profile-action:focus {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 rgba(15, 17, 21, 0.26);
+}
+
+.about-me__header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.about-me-profile {
+    display: grid;
+    justify-items: center;
+    gap: 26px;
+    margin-bottom: 34px;
+    text-align: center;
+}
+
+.about-me-profile__photo {
+    width: clamp(190px, 30vw, 330px);
+    height: clamp(190px, 30vw, 330px);
+    object-fit: cover;
+    border: 1px solid var(--color-line);
+    border-radius: 50%;
+    background: var(--color-white);
+    box-shadow: 0 18px 44px rgba(15, 17, 21, 0.08);
+}
+
+.about-me-profile__name {
+    max-width: 900px;
+    font-size: clamp(1.92rem, 5.44vw, 4rem);
+    line-height: 1.04;
+}
+
+.section-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 54px;
+    height: 54px;
+    color: var(--color-accent);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-soft);
+}
+
+.section-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.about-me__content {
+    max-width: 940px;
+    padding-left: clamp(0px, 3vw, 30px);
+    color: var(--color-muted);
+    font-size: clamp(1rem, 1.2vw, 1.08rem);
+    line-height: 1.78;
+}
+
+.about-me__content p + p {
+    margin-top: 18px;
+}
+
+.about-me__more {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 420ms ease, opacity 320ms ease;
+}
+
+.about-me-card.is-expanded .about-me__more {
+    opacity: 1;
+}
+
+.about-me__toggle {
+    margin-top: 28px;
+    margin-left: clamp(0px, 3vw, 30px);
 }
 
 /* Page hero is more compact than the home hero for interior pages. */
@@ -648,6 +815,21 @@ p {
         padding-block: 64px;
     }
 
+    .about-me__header {
+        align-items: flex-start;
+    }
+
+    .section-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .about-me__content,
+    .about-me__toggle {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
     .card-grid--four,
     .card-grid--two,
     .info-grid,
@@ -679,5 +861,25 @@ p {
 
     .button {
         width: 100%;
+    }
+}
+
+/* Respect users who prefer reduced motion while keeping content fully usable. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
     }
 }
