@@ -841,6 +841,56 @@ p {
         flex-direction: column;
         align-items: flex-start;
     }
+
+    .about-page .site-header {
+        height: auto;
+    }
+
+    .about-page .navbar {
+        min-height: var(--header-height);
+        gap: 18px;
+    }
+
+    .about-page .nav-toggle {
+        display: none;
+    }
+
+    .about-page .nav-menu {
+        position: static;
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        gap: 4px;
+        min-width: 0;
+        padding: 0;
+        overflow-x: auto;
+        background: transparent;
+        border-bottom: 0;
+        box-shadow: none;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+        scrollbar-width: none;
+    }
+
+    .about-page .nav-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .about-page .nav-link {
+        width: auto;
+        min-height: 42px;
+        padding-inline: 12px;
+        white-space: nowrap;
+    }
+
+    .about-page .about-me-actions {
+        justify-content: flex-end;
+    }
+
+    .about-page .about-me-card {
+        padding: clamp(28px, 5vw, 52px);
+    }
 }
 
 /* Small-phone refinements keep form and card content from feeling cramped. */
@@ -861,6 +911,20 @@ p {
 
     .button {
         width: 100%;
+    }
+
+    .about-page .button,
+    .about-page .profile-action {
+        width: auto;
+    }
+
+    .about-page .about-me-actions {
+        gap: 10px;
+    }
+
+    .about-page .profile-action {
+        min-height: 46px;
+        padding-inline: 18px;
     }
 }
 
