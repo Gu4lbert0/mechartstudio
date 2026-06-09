@@ -522,6 +522,16 @@ p {
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
+.project-card--link {
+    display: block;
+}
+
+.project-card--link:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(44, 111, 115, 0.12), var(--shadow-soft);
+}
+
 .project-card:hover {
     transform: translateY(-4px);
     border-color: #c6cdd4;
@@ -546,6 +556,107 @@ p {
 
 .project-card--large .project-card__body {
     padding: 26px;
+}
+
+/* Project detail pages share a readable case-study layout. */
+.project-detail-hero {
+    padding-block: 72px;
+    background: var(--color-soft);
+    border-bottom: 1px solid var(--color-line);
+}
+
+.project-detail-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 44px;
+    align-items: center;
+}
+
+.project-detail-hero__text p:last-child {
+    max-width: 720px;
+    margin-top: 18px;
+    color: var(--color-muted);
+    font-size: 1.08rem;
+}
+
+.project-detail-hero__image {
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-white);
+    box-shadow: var(--shadow-soft);
+}
+
+.project-detail-hero__image img {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+}
+
+.project-detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.project-detail-card {
+    padding: 30px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-white);
+    box-shadow: 0 1px 0 rgba(15, 17, 21, 0.03);
+}
+
+.project-detail-card p,
+.project-detail-card li {
+    color: var(--color-muted);
+}
+
+.project-detail-card p {
+    margin-top: 14px;
+}
+
+.project-detail-list {
+    display: grid;
+    gap: 12px;
+    margin: 18px 0 0;
+    padding-left: 20px;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.project-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-white);
+}
+
+.project-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.project-gallery figcaption {
+    padding: 12px 14px;
+    color: var(--color-muted);
+    font-size: 0.92rem;
+}
+
+.back-link {
+    display: inline-flex;
+    margin-bottom: 22px;
+    color: var(--color-black);
+    font-weight: 800;
+    border-bottom: 2px solid var(--color-accent);
 }
 
 /* The split layout supports short text blocks next to summaries or actions. */
@@ -733,8 +844,14 @@ p {
     }
 
     .split,
-    .contact-layout {
+    .contact-layout,
+    .project-detail-hero__inner,
+    .project-detail-layout {
         grid-template-columns: 1fr;
+    }
+
+    .project-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -833,7 +950,8 @@ p {
     .card-grid--four,
     .card-grid--two,
     .info-grid,
-    .service-grid {
+    .service-grid,
+    .project-gallery {
         grid-template-columns: 1fr;
     }
 
