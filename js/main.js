@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const aboutToggle = document.querySelector("[data-about-toggle]");
     const aboutMore = document.querySelector("[data-about-more]");
     const revealElements = document.querySelectorAll("[data-reveal]");
+    const previewImages = document.querySelectorAll(".project-detail-hero__image img, .project-gallery img");
 
     /*
      * Adds or removes a shadow class when the user scrolls. This gives the
@@ -101,6 +102,74 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             revealElements.forEach((element) => element.classList.add("is-visible"));
         }
+    }
+
+    /*
+     * Project image preview. Images open in an in-page lightbox so visitors can
+     * inspect the full image without navigating away from the current project.
+     */
+    if (previewImages.length > 0) {
+        const lightbox = document.createElement("div");
+        lightbox.className = "image-lightbox";
+        lightbox.setAttribute("role", "dialog");
+        lightbox.setAttribute("aria-modal", "true");
+        lightbox.setAttribute("aria-label", "Project image preview");
+        lightbox.innerHTML = `
+            <div class="image-lightbox__dialog">
+                <button class="image-lightbox__close" type="button" aria-label="Close image preview">&times;</button>
+                <img class="image-lightbox__image" alt="">
+                <p class="image-lightbox__caption"></p>
+            </div>
+        `;
+
+        document.body.appendChild(lightbox);
+
+        const lightboxImage = lightbox.querySelector(".image-lightbox__image");
+        const lightboxCaption = lightbox.querySelector(".image-lightbox__caption");
+        const closeButton = lightbox.querySelector(".image-lightbox__close");
+
+        const closeLightbox = () => {
+            lightbox.classList.remove("is-open");
+            document.body.style.overflow = "";
+        };
+
+        previewImages.forEach((image) => {
+            image.setAttribute("tabindex", "0");
+            image.setAttribute("role", "button");
+            image.setAttribute("aria-label", `Preview image: ${image.alt || "project image"}`);
+
+            const openLightbox = () => {
+                const caption = image.closest("figure")?.querySelector("figcaption")?.textContent || image.alt || "";
+
+                lightboxImage.src = image.currentSrc || image.src;
+                lightboxImage.alt = image.alt || "Project image preview";
+                lightboxCaption.textContent = caption;
+                lightbox.classList.add("is-open");
+                document.body.style.overflow = "hidden";
+                closeButton.focus();
+            };
+
+            image.addEventListener("click", openLightbox);
+            image.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openLightbox();
+                }
+            });
+        });
+
+        closeButton.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+                closeLightbox();
+            }
+        });
     }
 
     /*
