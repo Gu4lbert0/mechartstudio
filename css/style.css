@@ -914,8 +914,8 @@ p {
     color: #d8f0ef;
 }
 
-/* Tablet breakpoint reduces columns while preserving comfortable spacing. */
-@media (max-width: 980px) {
+/* Tablet and touch breakpoints use the compact menu before links become crowded. */
+@media (max-width: 1200px), (hover: none) and (pointer: coarse) {
     .card-grid--four,
     .service-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
