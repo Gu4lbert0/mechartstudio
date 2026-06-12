@@ -1039,48 +1039,6 @@ p {
         align-items: flex-start;
     }
 
-    .about-page .site-header {
-        height: auto;
-    }
-
-    .about-page .navbar {
-        min-height: var(--header-height);
-        gap: 18px;
-    }
-
-    .about-page .nav-toggle {
-        display: none;
-    }
-
-    .about-page .nav-menu {
-        position: static;
-        display: flex;
-        flex: 1 1 auto;
-        justify-content: flex-end;
-        gap: 4px;
-        min-width: 0;
-        padding: 0;
-        overflow-x: auto;
-        background: transparent;
-        border-bottom: 0;
-        box-shadow: none;
-        opacity: 1;
-        pointer-events: auto;
-        transform: none;
-        scrollbar-width: none;
-    }
-
-    .about-page .nav-menu::-webkit-scrollbar {
-        display: none;
-    }
-
-    .about-page .nav-link {
-        width: auto;
-        min-height: 42px;
-        padding-inline: 12px;
-        white-space: nowrap;
-    }
-
     .about-page .about-me-actions {
         justify-content: flex-end;
         margin-bottom: 18px;
