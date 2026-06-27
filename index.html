@@ -33,7 +33,7 @@
                 <li><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
                 <li><a class="nav-link" href="about.html">About</a></li>
                 <li><a class="nav-link" href="projects.html">Projects</a></li>
-                <li><a class="nav-link" href="services.html">Services</a></li>
+                <li hidden><a class="nav-link" href="services.html">Services</a></li>
                 <li><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -46,63 +46,17 @@
             <div class="container hero__content">
                 <img class="hero__logo" src="images/logo.png" alt="M-Robotics logo placeholder">
                 <p class="eyebrow">Robotics, automation, mechanical design</p>
-                <h1>Engineering Robotics for Agriculture and Industry</h1>
-                <p class="hero__summary">M-Robotics develops practical robotics systems, automation solutions, mechanical engineering designs, and agricultural technology for demanding field and industrial environments.</p>
+                <h1>Engineering practical robotic systems for real-world applications.</h1>
+                <p class="hero__summary">Mechanical engineering portfolio focused on robotic design, automation, fabrication, and collaborative sytems that support people int he field, classroom, and worksplace.</p>
                 <div class="hero__actions">
                     <a class="button button--primary" href="projects.html">View Projects</a>
+                    <a class="button button--secondary" href="about.html#about-me-title">About Me</a>
                 </div>
             </div>
         </section>
 
-        <!-- About Me section introduces the engineering background behind M-Robotics. -->
-        <section class="section about-me-section" aria-labelledby="about-me-title" data-reveal>
-            <div class="container about-me__container">
-                <article class="about-me-card">
-                    <!-- Decorative accent improves scanability while remaining hidden from screen readers. -->
-                    <span class="about-me-card__accent" aria-hidden="true"></span>
-
-                    <div class="about-me__header">
-                        <span class="section-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M9 3h6l1 3h3v5l-2.2 1.1a5.7 5.7 0 0 1-.5 1.1l.8 2.4-3.5 2-1.8-1.7a5.6 5.6 0 0 1-1.6 0l-1.8 1.7-3.5-2 .8-2.4a5.7 5.7 0 0 1-.5-1.1L3 11V6h3l1-3Z"></path>
-                                <circle cx="12" cy="10.5" r="2.8"></circle>
-                                <path d="M5 21h14"></path>
-                            </svg>
-                        </span>
-                        <div>
-                            <p class="eyebrow">Engineering profile</p>
-                            <h2 id="about-me-title">About Me</h2>
-                        </div>
-                    </div>
-
-                    <div class="about-me__content" id="about-me-content">
-                        <p>Gualberto M. Hernandez E. is a Mechanical and R&amp;D Engineer with experience leading multidisciplinary engineering projects from concept through manufacturing, integration, testing, and deployment. His work spans mechanical design, manufacturing, electrical systems, wiring and harnessing, pneumatic systems, rapid prototyping, robotics integration, and project leadership.</p>
-
-                        <p>Throughout his career, Gualberto has worked on projects ranging from agricultural automation and robotic platforms to specialized industrial equipment. He has led the development of robotic systems that progressed from initial concepts to successful field demonstrations, working closely with clients, engineers, technicians, and manufacturing teams to deliver practical solutions to real-world problems.</p>
-
-                        <!-- Collapsible biography content is hidden by default and expanded with js/main.js. -->
-                        <div class="about-me__more" id="about-me-more" data-about-more>
-                            <p>Gualberto served as Lead Engineer on the Gather Co-Robot project, where he was responsible for chassis design, electrical architecture, wiring harnesses, and system integration. The project progressed from concept to a functional prototype that was successfully demonstrated in real-world agricultural environments. He also contributed to the development of an Ekejime automation system, designing the pneumatic and electrical systems that supported successful client demonstrations. Earlier in his career, he developed an apple harvest robot prototype under a highly compressed timeline, applying mechanical, electrical, manufacturing, embedded systems, and programming knowledge to transform a concept into a working system.</p>
-
-                            <p>In addition to industry experience, Gualberto worked with Dr. YangQuan Chen's research laboratory at UC Merced. There, he guided student engineering teams, assisted with technical problem-solving, and supported robotic systems integration using ROS. His work focused on bridging mechanical, hardware, and software systems while developing prototype UGV platforms used to support larger research projects.</p>
-
-                            <p>What distinguishes Gualberto is his willingness to work across engineering disciplines and collaborate effectively with specialists from different technical backgrounds. He is driven by curiosity, a desire to understand how systems work, and a commitment to continuous learning. This mindset allows him to contribute wherever a project requires support, whether in mechanical design, manufacturing, integration, testing, or system development.</p>
-
-                            <p>His engineering philosophy is rooted in a principle he learned early in his career: "Physics First." Before pursuing complex solutions, he focuses on understanding the fundamental physics governing a system. From that foundation, he develops practical, manufacturable designs that can be tested, refined, and successfully deployed. He believes the most effective engineering solutions are those that not only function correctly but also solve meaningful problems for the people who use them.</p>
-
-                            <p>Today, Gualberto continues to pursue opportunities in mechanical engineering, research and development, mechatronics, agricultural robotics, and advanced robotic systems, with a particular interest in projects that bring together multiple engineering disciplines to create innovative real-world solutions.</p>
-                        </div>
-                    </div>
-
-                    <button class="button button--secondary about-me__toggle" type="button" aria-expanded="false" aria-controls="about-me-more" data-about-toggle>
-                        Read More
-                    </button>
-                </article>
-            </div>
-        </section>
-
         <!-- Featured projects preview the portfolio and link to the fuller Projects page. -->
-        <section class="section" aria-labelledby="featured-projects-title">
+        <section class="section" aria-labelledby="featured-projects-title" hidden>
             <div class="container">
                 <div class="section-heading">
                     <p class="eyebrow">Selected work</p>
@@ -155,7 +109,7 @@
                 </div>
                 <div class="feature-list">
                     <p>M-Robotics combines mechanical engineering, CAD design, embedded systems thinking, and field-focused automation strategy.</p>
-                    <a class="text-link" href="services.html">Explore services</a>
+                    <a class="text-link" href="services.html" hidden>Explore services</a>
                 </div>
             </div>
         </section>
