@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+    <title id="title">Coming soon</title>
+    <desc id="desc">A simple placeholder image with the words Coming soon.</desc>
+    <rect width="1200" height="900" fill="#f4f7f8"/>
+    <path d="M0 120h1200M0 300h1200M0 480h1200M0 660h1200M0 840h1200M120 0v900M300 0v900M480 0v900M660 0v900M840 0v900M1020 0v900" stroke="#d9e2e7" stroke-width="2"/>
+    <rect x="150" y="286" width="900" height="328" rx="12" fill="#ffffff" stroke="#cfd9df" stroke-width="4"/>
+    <text x="600" y="470" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="800" fill="#101318">Coming soon</text>
+    <line x1="418" y1="526" x2="782" y2="526" stroke="#006c70" stroke-width="8" stroke-linecap="round"/>
+</svg>
