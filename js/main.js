@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const aboutToggle = document.querySelector("[data-about-toggle]");
     const aboutMore = document.querySelector("[data-about-more]");
     const revealElements = document.querySelectorAll("[data-reveal]");
-    const previewImages = document.querySelectorAll(".project-detail-hero__image img, .project-gallery img");
+    const previewImages = document.querySelectorAll(".project-detail-hero__image img, .project-gallery img:not([data-model-preview-image])");
+    const projectCards = document.querySelectorAll(".projects-page .project-card--link");
 
     /*
      * Adds or removes a shadow class when the user scrolls. This gives the
@@ -102,6 +103,48 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             revealElements.forEach((element) => element.classList.add("is-visible"));
         }
+    }
+
+    /*
+     * Keep the Projects grid aligned with each linked project page. The HTML
+     * still has fallback text, and this refreshes it from the paired page when
+     * the site is served over HTTP(S).
+     */
+    if (projectCards.length > 0 && /^https?:$/.test(window.location.protocol)) {
+        projectCards.forEach(async (card) => {
+            try {
+                const response = await fetch(card.href);
+
+                if (!response.ok) {
+                    return;
+                }
+
+                const html = await response.text();
+                const page = new DOMParser().parseFromString(html, "text/html");
+                const pageTitle = page.querySelector(".project-detail-hero__text h1")?.textContent?.trim();
+                const pageIntro = page.querySelector(".project-detail-hero__text p")?.textContent?.trim();
+                const pageImage = page.querySelector(".project-detail-hero__image img");
+                const cardTitle = card.querySelector(".project-card__body h3");
+                const cardIntro = card.querySelector(".project-card__body p");
+                const cardImage = card.querySelector("img");
+
+                if (pageTitle && cardTitle) {
+                    cardTitle.textContent = pageTitle;
+                    card.setAttribute("aria-label", `View ${pageTitle} project details`);
+                }
+
+                if (pageIntro && cardIntro) {
+                    cardIntro.textContent = pageIntro;
+                }
+
+                if (pageImage && cardImage) {
+                    cardImage.src = new URL(pageImage.getAttribute("src"), card.href).href;
+                    cardImage.alt = pageImage.alt || `${pageTitle || "Project"} image`;
+                }
+            } catch {
+                /* Keep the static fallback card content if a project page cannot be read. */
+            }
+        });
     }
 
     /*

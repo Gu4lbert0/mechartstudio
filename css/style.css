@@ -708,6 +708,56 @@ p {
     border: 0;
 }
 
+.model-preview {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(180deg, #f7f9fb 0%, #eef3f6 100%);
+    cursor: grab;
+}
+
+.model-preview:active {
+    cursor: grabbing;
+}
+
+.model-preview canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.model-preview__status {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.model-preview-trigger {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.model-preview-trigger img {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.model-preview-trigger:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
 .project-gallery figcaption {
     padding: 12px 14px;
     color: var(--color-muted);

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Photogrammetry project by M-Robotics, including project summary, engineering role, and images.">
+        <title>Photogrammetry | M-Robotics</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+        <header class="site-header" data-header>
+            <nav class="navbar container" aria-label="Primary navigation">
+                <a class="brand" href="../index.html" aria-label="M-Robotics home">
+                    <img class="brand__logo" src="../images/logo.png" alt="M-Robotics logo">
+                    <span class="brand__name">M-Robotics</span>
+                </a>
+                <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                </button>
+                <ul class="nav-menu" id="primary-menu" data-nav-menu">
+                    <li>
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" href="../projects.html" aria-current="page">Projects</a>
+                    </li>
+                    <li hidden>
+                        <a class="nav-link" href="../services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main-content">
+            <section class="project-detail-hero">
+                <div class="container project-detail-hero__inner">
+                    <div class="project-detail-hero__text">
+                        <h1>Photogrammetry</h1>
+                        <p>Captured and processed aerial imagery into detailed 3D models, orthomosaic maps, and terrain reconstructions for a variety of environments. Planned autonomous flight missions to ensure consistent image overlap and high-quality reconstruction results.</p>
+                    </div>
+                    <div class="project-detail-hero__image">
+                        <img src="../images/placeholder-project.jpg" alt="Photogrammetry project image">
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <a class="back-link" href="../projects.html">Back to Projects</a>
+                    <div class="project-detail-layout">
+                        <article class="project-detail-card">
+                            <h2>Project Summary</h2>
+                            <p>This project demonstrates the use of drone-based photogrammetry to create accurate digital representations of real-world environments. Using autonomous flight-planning and photogrammetry software, aerial imagery was transformed into detailed 3D models of a construction site, a section of Yosemite Lake, and a natural river corridor for visualization, documentation, and analysis.</p>
+                            <p>The project emphasized careful image collection, reconstruction quality, scale awareness, and preparing outputs that could be reviewed or used as a reference for design and planning work.</p>
+                        </article>
+                        <aside class="project-detail-card">
+                            <h2>My Role</h2>
+                            <ul class="project-detail-list">
+                                <li>Planned autonomous flight missions using the Litchi app and waypoint-based mapping.</li>
+                                <li>Captured high-resolution aerial imagery with the DJI Mini 2.</li>
+                                <li>Processed image datasets into detailed 3D models, orthomosaic maps, and terrain reconstructions.</li>
+                                <li>Optimized flight paths and image overlap using the Litchi app to improve reconstruction accuracy.</li>
+                                <li>Generated digital models of a construction site, a section of Yosemite Lake, and a natural river corridor.</li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="project-gallery" aria-label="Photogrammetry image gallery">
+                        <figure>
+                            <button class="model-preview-trigger" type="button" data-model-open data-model-src="../3D%20models/MercedLakeBaseballField.glb" data-model-title="Merced Lake Baseball Field 3D Model" aria-label="Open interactive 3D preview of the Merced Lake baseball field model">
+                                <img src="../images/MercedLakeBaseballField.png" alt="Merced Lake baseball field photogrammetry preview" data-model-preview-image>
+                            </button>
+                            <figcaption>Click to open an interactive textured 3D preview of the Merced Lake baseball field model.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="../images/placeholder-project.jpg" alt="Photogrammetry model reference image">
+                            <figcaption>Visual reference model preparation.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="../images/placeholder-project.jpg" alt="Photogrammetry documentation image">
+                            <figcaption>Documentation and review output.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container site-footer__inner">
+                <a href="https://mechartstudio.com" aria-label="Visit mechartstudio.com">mechartstudio.com</a>
+            </div>
+        </footer>
+        <script src="../js/main.js"></script>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"
+                }
+            }
+        </script>
+        <script type="module" src="../js/model-viewer.js"></script>
+    </body>
+</html>
+

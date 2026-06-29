@@ -1,160 +1,155 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Standard responsive metadata and page-specific search description. -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore M-Robotics projects including UGV co-robots, fruit counting systems, autonomous drones, and CNC machine concepts.">
-    <title>Projects | M-Robotics</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="projects-page">
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <!-- Shared navigation. The active class marks the current page for users. -->
-    <header class="site-header" data-header>
-        <nav class="navbar container" aria-label="Primary navigation">
-            <a class="brand" href="index.html" aria-label="M-Robotics home">
-                <img class="brand__logo" src="images/logo.png" alt="M-Robotics logo">
-                <span class="brand__name">M-Robotics</span>
-            </a>
-            <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
-                <span class="nav-toggle__bar"></span>
-                <span class="nav-toggle__bar"></span>
-                <span class="nav-toggle__bar"></span>
-            </button>
-            <ul class="nav-menu" id="primary-menu" data-nav-menu>
-                <li><a class="nav-link" href="index.html">Home</a></li>
-                <li><a class="nav-link" href="about.html">About</a></li>
-                <li><a class="nav-link active" href="projects.html" aria-current="page">Projects</a></li>
-                <li hidden><a class="nav-link" href="services.html">Services</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main id="main-content">
-        <section class="page-hero">
-            <div class="container page-hero__inner">
-                <h1>Portfolio</h1>
-                <p>Representative work spanning field robotics, computer vision, UAVs, and novel mechanical systems.</p>
-            </div>
-        </section>
-
-        <!-- Project cards use the same component as the home page, with fuller descriptions here. -->
-        <section class="section" aria-labelledby="projects-list-title">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow" id="projects-list-title">Engineering work and projects</p>
+    <head>
+        <!-- Standard responsive metadata and page-specific search description. -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explore M-Robotics projects including UGV co-robots, fruit counting systems, autonomous drones, and CNC machine concepts.">
+        <title>Projects | M-Robotics</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="projects-page">
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+        <!-- Shared navigation. The active class marks the current page for users. -->
+        <header class="site-header" data-header>
+            <nav class="navbar container" aria-label="Primary navigation">
+                <a class="brand" href="index.html" aria-label="M-Robotics home">
+                    <img class="brand__logo" src="images/logo.png" alt="M-Robotics logo">
+                    <span class="brand__name">M-Robotics</span>
+                </a>
+                <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                </button>
+                <ul class="nav-menu" id="primary-menu" data-nav-menu>
+                    <li>
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" href="projects.html" aria-current="page">Projects</a>
+                    </li>
+                    <li hidden>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main-content">
+            <section class="page-hero">
+                <div class="container page-hero__inner">
+                    <h1>Portfolio</h1>
+                    <p>Representative work spanning field robotics, computer vision, UAVs, and novel mechanical systems.</p>
                 </div>
-
-                <div class="card-grid card-grid--two">
-                    <a class="project-card project-card--large project-card--link" href="Projects/project-architectural-3d-modeling.html" aria-label="View Architectural 3D Modeling project details">
-                        <img src="images/project-architectural-3d-modeling.jpeg" alt="Architectural 3D Modeling project image">
-                        <div class="project-card__body">
-                            <h3>Architectural 3D Modeling</h3>
-                            <p>Detailed architectural visualization and 3D modeling work for communicating spatial design, structure, and presentation-ready concepts.</p>
-                        </div>
-                    </a>
-
-                    <a class="project-card project-card--large project-card--link" href="Projects/project-auto-header-height-control-system.html" aria-label="View Auto-Header Height Control System project details">
-                        <img src="images/project-auto-header-height-control-system.jpg" alt="Auto-Header Height Control System project image">
-                        <div class="project-card__body">
-                            <h3>Auto-Header Height Control System</h3>
-                            <p>Field engineering support project focused on the installation, operation, troubleshooting, and optimization of automated header height control systems used on commercial harvesting equipment throughout California's agricultural industry</p>
-                        </div>
-                    </a>
-
-                    <a class="project-card project-card--large project-card--link" href="Projects/project-apple-harvester.html" aria-label="View Apple Harvester project details">
-                        <img src="images/project-apple-harvester.jpg" alt="Apple Harvester project image">
-                        <div class="project-card__body">
-                            <h3>Apple Harvester</h3>
-                            <p>Robotic apple harvesting prototype developed under a compressed timeline to demonstrate automated fruit picking concepts.</p>
-                        </div>
-                    </a>
-
-                    <a class="project-card project-card--large project-card--link" href="Projects/project-module-sortation.html" aria-label="View Module Sortation project details">
-                        <img src="images/project-module-sortation.jpg" alt="Module Sortation project image">
-                        <div class="project-card__body">
-                            <h3>Module Sortation</h3>
-                            <p>Automated module sorting system involving mechanical design, wiring, pneumatic systems, interface design, and testing.</p>
-                        </div>
-                    </a>
-
-                    <a class="project-card project-card--large project-card--link" href="Projects/project-woolly.html" aria-label="View Woolly project details">
-                        <img src="images/project-woolly.jpg" alt="Woolly project image">
-                        <div class="project-card__body">
-                            <h3>Woolly</h3>
-                            <p>Mechanical design, drive-system support, fixturing, assembly, documentation, machining, harnessing, and sensor testing work.</p>
-                        </div>
-                    </a>
-
-                    <a class="project-card project-card--large project-card--link" href="Projects/project-ekejime-robot.html" aria-label="View Ekejime Robot project details">
-                        <img src="images/project-ekejime-robot.jpg" alt="Ekejime Robot project image">
-                        <div class="project-card__body">
-                            <h3>Ekejime Robot</h3>
-                            <p>Automation system development involving pneumatic design, safety features, plumbing, and high-voltage harnessing.</p>
-                        </div>
-                    </a>
-
-                    <a class="project-card project-card--large project-card--link" href="Projects/project-gather.html" aria-label="View Gather project details">
-                        <img src="images/project-gather.jpg" alt="Gather project image">
-                        <div class="project-card__body">
-                            <h3>Gather</h3>
-                            <p>Sheet metal body, mechanical system design, electrical collaboration, assembly, welding, calculations, testing, and investor demo support.</p>
-                        </div>
-                    </a>
-
-                    <a class="project-card project-card--large project-card--link" href="Projects/project-quadcopters.html" aria-label="View Quadcopters project details">
-                        <img src="images/project-quadcopters.jpg" alt="Quadcopters project image">
-                        <div class="project-card__body">
-                            <h3>Quadcopters</h3>
-                            <p>UAV platform work involving mechanical layout, component integration, wiring, testing, and flight-ready assembly.</p>
-                        </div>
-                    </a>
-
-                    <a class="project-card project-card--large project-card--link" href="Projects/project-machining.html" aria-label="View Machining project details">
-                        <img src="images/project-machining.jpg" alt="Machining project image">
-                        <div class="project-card__body">
-                            <h3>Machining</h3>
-                            <p>Hands-on fabrication and machining work supporting prototype development, fixtures, components, and mechanical assemblies.</p>
-                        </div>
-                    </a>
-
-                    <article class="project-card project-card--large">
-                        <img src="images/placeholder-project.jpg" alt="Photogrammetry project placeholder">
-                        <div class="project-card__body">
-                            <h3>Photogrammetry</h3>
-                            <p>Image-based 3D reconstruction work for capturing real-world geometry, documenting spaces, and producing usable visual reference models.</p>
-                        </div>
-                    </article>
-
-                    <article class="project-card project-card--large">
-                        <img src="images/placeholder-project.jpg" alt="Plasma CNC project placeholder">
-                        <div class="project-card__body">
-                            <h3>Plasma CNC</h3>
-                            <p>Computer-controlled plasma cutting work focused on digital fabrication, toolpath preparation, sheet metal parts, and prototype production.</p>
-                        </div>
-                    </article>
-
-                    <article class="project-card project-card--large">
-                        <img src="images/placeholder-project.jpg" alt="Object counting and mapping project placeholder">
-                        <div class="project-card__body">
-                            <h3>Object Counting and Mapping</h3>
-                            <p>Computer vision and mapping project work for detecting objects, counting field assets, and organizing spatial information for review.</p>
-                        </div>
-                    </article>
+            </section>
+            <!-- Project cards use the same component as the home page, with fuller descriptions here. -->
+            <section class="section" aria-labelledby="projects-list-title">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow" id="projects-list-title">Engineering work and projects</p>
+                    </div>
+                    <div class="card-grid card-grid--two">
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-architectural-3d-modeling.html" aria-label="View Architectural 3D Modeling project details">
+                            <img src="images/project-architectural-3d-modeling.jpeg" alt="Architectural 3D Modeling project image">
+                            <div class="project-card__body">
+                                <h3>Architectural 3D Modeling</h3>
+                                <p>Architectural 3D modeling project focused on converting blueprint specifications into detailed digital models using Autodesk Inventor. The project supported architectural visualization through both digital deliverables and physical 3D-printed prototypes.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-auto-header-height-control-system.html" aria-label="View Auto-Header Height Control System project details">
+                            <img src="images/project-auto-header-height-control-system.jpg" alt="Auto-Header Height Control System engineering project image">
+                            <div class="project-card__body">
+                                <h3>Auto-Header Height Control System</h3>
+                                <p>Field engineering support project focused on the installation, operation, troubleshooting, and optimization of automated header height control systems used on commercial harvesting equipment throughout California's agricultural industry.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-apple-harvester.html" aria-label="View Apple Harvester project details">
+                            <img src="images/project-apple-harvester.jpg" alt="Apple Harvester engineering project image">
+                            <div class="project-card__body">
+                                <h3>Apple Harvester</h3>
+                                <p>Robotic harvesting system designed to pick, and collect apples while minimizing fruit damage and reducing labor requirements in orchard operations</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-module-sortation.html" aria-label="View Module Sortation project details">
+                            <img src="images/project-module-sortation.jpg" alt="Module Sortation engineering project image">
+                            <div class="project-card__body">
+                                <h3>Module Sortation</h3>
+                                <p>Automated industrial sorting system designed to transport, inspect, and process plastic modules through a series of mechanically, electrically, and pneumatically controlled operations.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-woolly.html" aria-label="View Woolly project details">
+                            <img src="images/project-woolly.jpg" alt="Woolly engineering project image">
+                            <div class="project-card__body">
+                                <h3>Woolly</h3>
+                                <p>A modular mobile robotic platform designed to transport heavy industrial materials and support multiple tasks through interchangeable attachments and configurable drive systems.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-ekejime-robot.html" aria-label="View Ekejime Robot project details">
+                            <img src="images/project-ekejime-robot.jpg" alt="Ekejime Robot engineering project image">
+                            <div class="project-card__body">
+                                <h3>Ekejime Robot</h3>
+                                <p>An automated fish-processing system developed to perform the ikejime process through integrated pneumatic and electrical subsystems while operating in a wet industrial environment.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-gather.html" aria-label="View Gather project details">
+                            <img src="images/project-gather.jpg" alt="Gather engineering project image">
+                            <div class="project-card__body">
+                                <h3>Gather</h3>
+                                <p>A modular collaborative robot designed to autonomously transport crops, materials, and equipment while assisting farmworkers in specialty crop operations.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-quadcopters.html" aria-label="View Quadcopters project details">
+                            <img src="images/project-quadcopters.jpg" alt="Quadcopters engineering project image">
+                            <div class="project-card__body">
+                                <h3>Quadcopters</h3>
+                                <p>UAV platform work involving mechanical layout, component integration, wiring, testing, and flight-ready assembly.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-machining.html" aria-label="View Machining project details">
+                            <img src="images/project-machining.jpg" alt="Machining project image">
+                            <div class="project-card__body">
+                                <h3>Machining</h3>
+                                <p>Hands-on fabrication and machining work supporting prototype development, fixtures, components, and mechanical assemblies.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-photogrammetry.html" aria-label="View Photogrammetry project details">
+                            <img src="images/placeholder-project.jpg" alt="Photogrammetry project image">
+                            <div class="project-card__body">
+                                <h3>Photogrammetry</h3>
+                                <p>Image-based 3D reconstruction work for capturing real-world geometry, documenting spaces, and producing usable visual reference models.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-plasma-cnc.html" aria-label="View Plasma CNC project details">
+                            <img src="images/placeholder-project.jpg" alt="Plasma CNC project image">
+                            <div class="project-card__body">
+                                <h3>Plasma CNC</h3>
+                                <p>Computer-controlled plasma cutting work focused on digital fabrication, toolpath preparation, sheet metal parts, and prototype production.</p>
+                            </div>
+                        </a>
+                        <a class="project-card project-card--large project-card--link" href="Projects/project-object-counting-and-mapping.html" aria-label="View Object Counting and Mapping project details">
+                            <img src="images/Object%20Tracking.jpg" alt="Object tracking project image">
+                            <div class="project-card__body">
+                                <h3>Object Counting and Mapping</h3>
+                                <p>A handheld robotic vision system designed to detect, count, and generate three-dimensional maps of objects by combining computer vision, depth sensing, visual-inertial odometry, and embedded computing into a single portable platform.</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container site-footer__inner">
+                <a href="https://mechartstudio.com" aria-label="Visit mechartstudio.com">mechartstudio.com</a>
             </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container site-footer__inner">
-            <a href="https://mechartstudio.com" aria-label="Visit mechartstudio.com">mechartstudio.com</a>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
 </html>
+
+
