@@ -777,6 +777,58 @@ p {
     cursor: zoom-in;
 }
 
+.document-preview-card {
+    position: relative;
+    display: grid;
+    aspect-ratio: 4 / 3;
+    place-items: center;
+    gap: 10px;
+    padding: 28px;
+    color: var(--color-black);
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--color-white), var(--color-light));
+}
+
+.document-preview-card--pdf {
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    background: var(--color-white);
+}
+
+.document-preview-card iframe {
+    position: absolute;
+    top: 0;
+    left: -28%;
+    width: 128%;
+    height: 100%;
+    border: 0;
+    pointer-events: none;
+}
+
+.document-preview-card__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.document-preview-card span {
+    display: inline-grid;
+    width: 64px;
+    height: 64px;
+    place-items: center;
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.document-preview-card strong {
+    font-size: 1rem;
+}
+
 .project-media-row figcaption {
     padding: 12px 14px;
     color: var(--color-muted);
