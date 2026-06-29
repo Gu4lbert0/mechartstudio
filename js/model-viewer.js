@@ -24,10 +24,10 @@ const frameObject = (THREE, camera, controls, object) => {
     const size = box.getSize(new THREE.Vector3());
     const center = box.getCenter(new THREE.Vector3());
     const maxDimension = Math.max(size.x, size.y, size.z);
-    const distance = maxDimension / (2 * Math.tan((camera.fov * Math.PI) / 360));
+    const distance = (maxDimension / (2 * Math.tan((camera.fov * Math.PI) / 360))) * 1.85;
 
     object.position.sub(center);
-    camera.position.set(distance * 0.75, distance * 0.55, distance * 1.25);
+    camera.position.set(distance * 0.18, distance * 1.45, distance * 0.42);
     camera.near = Math.max(distance / 100, 0.01);
     camera.far = distance * 100;
     camera.updateProjectionMatrix();
@@ -88,6 +88,11 @@ const createViewerStage = () => {
     stage.className = "model-preview";
     stage.setAttribute("aria-label", "Interactive 3D model preview");
     stage.innerHTML = '<p class="model-preview__status" data-model-status>Loading 3D model...</p>';
+    stage.style.aspectRatio = "4 / 3";
+    stage.style.height = "auto";
+    stage.style.maxHeight = "none";
+    stage.style.minHeight = "0";
+    stage.style.width = "100%";
 
     return stage;
 };
@@ -120,6 +125,10 @@ const openInlineViewer = async (button) => {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     const controls = new OrbitControls(camera, renderer.domElement);
 
+    renderer.domElement.style.display = "block";
+    renderer.domElement.style.width = "100%";
+    renderer.domElement.style.height = "100%";
+    renderer.domElement.style.maxHeight = "100%";
     stage.appendChild(renderer.domElement);
 
     scene.background = new THREE.Color(0xf7f9fb);
