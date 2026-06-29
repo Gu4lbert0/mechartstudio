@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const aboutToggle = document.querySelector("[data-about-toggle]");
     const aboutMore = document.querySelector("[data-about-more]");
     const revealElements = document.querySelectorAll("[data-reveal]");
-    const previewImages = document.querySelectorAll(".project-detail-hero__image img, .project-gallery img:not([data-model-preview-image])");
+    const previewImages = document.querySelectorAll(".project-detail-hero__image img, .project-gallery img:not([data-model-preview-image]), .project-media-row--photos img");
     const projectCards = document.querySelectorAll(".projects-page .project-card--link");
 
     /*
