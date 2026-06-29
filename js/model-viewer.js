@@ -2,6 +2,7 @@ const modelOpenButtons = document.querySelectorAll("[data-model-open]");
 const activeViewers = new Set();
 
 let threeModulesPromise = null;
+let activeModal = null;
 
 const loadThreeModules = () => {
     if (!threeModulesPromise) {
@@ -83,31 +84,17 @@ const disposeViewer = (viewer) => {
     activeViewers.delete(viewer);
 };
 
-const createViewerStage = () => {
+const createViewerStage = (isModal = false) => {
     const stage = document.createElement("div");
-    stage.className = "model-preview";
+    stage.className = isModal ? "model-preview model-preview--modal" : "model-preview";
     stage.setAttribute("aria-label", "Interactive 3D model preview");
     stage.innerHTML = '<p class="model-preview__status" data-model-status>Loading 3D model...</p>';
-    stage.style.aspectRatio = "4 / 3";
-    stage.style.height = "auto";
-    stage.style.maxHeight = "none";
-    stage.style.minHeight = "0";
-    stage.style.width = "100%";
 
     return stage;
 };
 
-const openInlineViewer = async (button) => {
-    const modelSource = button.dataset.modelSrc;
-
-    if (!modelSource) {
-        return;
-    }
-
-    const stage = createViewerStage();
+const startViewer = async (stage, modelSource) => {
     const status = stage.querySelector("[data-model-status]");
-
-    button.replaceWith(stage);
 
     let THREE;
     let OrbitControls;
@@ -131,7 +118,7 @@ const openInlineViewer = async (button) => {
     renderer.domElement.style.maxHeight = "100%";
     stage.appendChild(renderer.domElement);
 
-    scene.background = new THREE.Color(0xf7f9fb);
+    scene.background = null;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -212,12 +199,93 @@ const openInlineViewer = async (button) => {
     );
 
     animate();
+
+    return viewer;
 };
 
 modelOpenButtons.forEach((button) => {
-    button.addEventListener("click", () => openInlineViewer(button), { once: true });
+    button.addEventListener("click", () => openModelModal(button));
 });
 
 window.addEventListener("beforeunload", () => {
     activeViewers.forEach(disposeViewer);
+});
+
+const createModelModal = (title) => {
+    const modal = document.createElement("div");
+    modal.className = "model-viewer-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", title || "Interactive 3D model preview");
+    modal.innerHTML = `
+        <div class="model-viewer-modal__dialog">
+            <div class="model-viewer-modal__bar">
+                <h2>${title || "Interactive 3D Model"}</h2>
+                <button class="model-viewer-modal__close" type="button" aria-label="Close 3D preview">&times;</button>
+            </div>
+        </div>
+    `;
+
+    const dialog = modal.querySelector(".model-viewer-modal__dialog");
+    const stage = createViewerStage(true);
+    dialog.appendChild(stage);
+    document.body.appendChild(modal);
+
+    return {
+        closeButton: modal.querySelector(".model-viewer-modal__close"),
+        modal,
+        stage,
+    };
+};
+
+const closeModelModal = () => {
+    if (!activeModal) {
+        return;
+    }
+
+    disposeViewer(activeModal.viewer);
+    activeModal.modal.remove();
+    activeModal.trigger?.focus();
+    activeModal = null;
+    document.body.style.overflow = "";
+};
+
+const openModelModal = async (button) => {
+    const modelSource = button.dataset.modelSrc;
+
+    if (!modelSource) {
+        return;
+    }
+
+    closeModelModal();
+
+    const modalParts = createModelModal(button.dataset.modelTitle);
+    activeModal = {
+        ...modalParts,
+        trigger: button,
+        viewer: null,
+    };
+
+    document.body.style.overflow = "hidden";
+    modalParts.closeButton.focus();
+    modalParts.closeButton.addEventListener("click", closeModelModal);
+    modalParts.modal.addEventListener("click", (event) => {
+        if (event.target === modalParts.modal) {
+            closeModelModal();
+        }
+    });
+
+    const viewer = await startViewer(modalParts.stage, modelSource);
+
+    if (activeModal?.modal === modalParts.modal) {
+        activeModal.viewer = viewer;
+    } else {
+        disposeViewer(viewer);
+    }
+};
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeModelModal();
+    }
 });
