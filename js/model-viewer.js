@@ -177,7 +177,10 @@ const startViewer = async (stage, modelSource) => {
 
     resize();
 
-    new GLTFLoader().load(
+    const loader = new GLTFLoader();
+    loader.setCrossOrigin("anonymous");
+
+    loader.load(
         modelSource,
         (gltf) => {
             if (viewer.isDisposed) {
@@ -191,9 +194,10 @@ const startViewer = async (stage, modelSource) => {
             status?.remove();
         },
         undefined,
-        () => {
+        (error) => {
             if (status && !viewer.isDisposed) {
-                status.textContent = "The 3D model could not be loaded.";
+                status.textContent = "The 3D model could not be loaded. Check that the GitHub Release asset is public and can be loaded by this website.";
+                console.error("3D model load failed:", modelSource, error);
             }
         },
     );

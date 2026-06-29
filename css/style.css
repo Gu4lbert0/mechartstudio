@@ -753,11 +753,16 @@ p {
 
 .model-preview__status {
     position: absolute;
-    inset: 0;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
     display: grid;
     place-items: center;
-    padding: 20px;
-    color: var(--color-muted);
+    max-width: min(520px, 80vw);
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    color: var(--color-black);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
     font-size: 0.95rem;
     text-align: center;
     pointer-events: none;
