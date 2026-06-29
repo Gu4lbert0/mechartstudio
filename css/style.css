@@ -71,6 +71,10 @@ h1 {
     max-width: 900px;
 }
 
+.hero h1 {
+    font-size: clamp(1.5rem, 3.2vw, 3.04rem);
+}
+
 h2 {
     font-size: clamp(1.8rem, 3vw, 3rem);
 }
@@ -200,36 +204,34 @@ p {
     transition: transform 180ms ease, opacity 180ms ease;
 }
 
-/* Hero uses a real image asset as requested while preserving readable text. */
+/* Hero keeps a clean white background with no decorative image layer. */
 .hero {
     position: relative;
     min-height: calc(100vh - var(--header-height));
     overflow: hidden;
     display: grid;
     align-items: center;
+    background: var(--color-white);
     border-bottom: 1px solid var(--color-line);
-}
-
-.hero__media {
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.82) 48%, rgba(255, 255, 255, 0.2) 100%), url("../images/hero.jpg");
-    background-position: center;
-    background-size: cover;
 }
 
 .hero__content {
     position: relative;
     z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.54fr) minmax(420px, 0.46fr);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
     padding-block: 88px;
 }
 
-.hero__logo {
-    width: 72px;
-    height: 72px;
-    margin-bottom: 28px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-soft);
+.hero__butterfly {
+    width: min(44vw, 602px);
+    max-width: none;
+    justify-self: end;
+    background: transparent;
+    object-fit: contain;
+    transform: translateY(-16mm);
 }
 
 .hero__summary {
@@ -1042,11 +1044,17 @@ p {
         min-height: auto;
     }
 
-    .hero__media {
-        background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.88) 100%), url("../images/hero.jpg");
+    .hero__content {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-block: 64px;
     }
 
-    .hero__content,
+    .hero__butterfly {
+        width: min(86vw, 448px);
+        justify-self: start;
+    }
+
     .page-hero {
         padding-block: 64px;
     }
@@ -1155,9 +1163,8 @@ p {
 
 /* Small-phone refinements keep form and card content from feeling cramped. */
 @media (max-width: 420px) {
-    .hero__logo {
-        width: 62px;
-        height: 62px;
+    .hero__butterfly {
+        width: min(90vw, 392px);
     }
 
     .project-card__body,
