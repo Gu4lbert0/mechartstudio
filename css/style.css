@@ -644,6 +644,22 @@ p {
     margin-top: 14px;
 }
 
+.inline-blue-link {
+    color: #4aaee8;
+    font-weight: 400;
+    border-bottom: 0;
+    text-decoration: none;
+}
+
+.inline-blue-link:visited,
+.inline-blue-link:hover,
+.inline-blue-link:focus {
+    color: #2388c2;
+    font-weight: 400;
+    border-bottom: 0;
+    text-decoration: none;
+}
+
 .project-detail-list {
     display: grid;
     gap: 12px;
