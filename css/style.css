@@ -485,6 +485,31 @@ p {
     max-width: 850px;
 }
 
+/* Keep the contact introduction prominent without overwhelming the form. */
+.contact-page .page-hero {
+    padding-block: 48px calc(48px - 10mm);
+    background: var(--color-white);
+}
+
+.contact-page .page-hero__inner {
+    max-width: var(--container);
+}
+
+.contact-page .page-hero .eyebrow {
+    display: none;
+}
+
+.contact-page .page-hero h1 {
+    position: relative;
+    top: -10mm;
+    margin-bottom: -10mm;
+    font-size: clamp(1.2rem, 2.56vw, 2.43rem);
+}
+
+.contact-page .page-hero + .section {
+    padding-top: 5mm;
+}
+
 .projects-page .page-hero {
     padding-block: 48px calc(48px - 10mm);
     background: var(--color-white);

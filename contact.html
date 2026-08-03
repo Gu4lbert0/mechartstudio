@@ -8,7 +8,7 @@
     <title>Contact | M-Robotics</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="contact-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Shared navigation with mobile hamburger support. -->
@@ -38,17 +38,17 @@
             <div class="container page-hero__inner">
                 <p class="eyebrow">Contact</p>
                 <h1>Start a robotics, automation, or mechanical design conversation.</h1>
-                <p>Use the form UI below or email M-Robotics directly. The static form is ready for a future backend or form service integration.</p>
+                <p>Use the form below or email M-Robotics directly.</p>
             </div>
         </section>
 
-        <!-- Contact layout places company details beside a backend-free form UI. -->
+        <!-- Contact layout places company details beside the hosted contact form. -->
         <section class="section" aria-labelledby="contact-title">
             <div class="container contact-layout">
                 <aside class="contact-panel" aria-labelledby="contact-title">
-                    <p class="eyebrow">Company</p>
+                    <!-- <p class="eyebrow">Company</p> -->
                     <h2 id="contact-title">M-Robotics</h2>
-                    <p>Robotics systems, automation solutions, mechanical engineering designs, and agricultural technology.</p>
+                    <p>Robotics systems and mechanical engineering designs.</p>
                     <dl class="contact-details">
                         <div>
                             <dt>Email</dt>
@@ -61,25 +61,27 @@
                     </dl>
                 </aside>
 
-                <form class="contact-form" action="#" method="post">
+                <form class="contact-form" action="https://formsubmit.co/Gu4lbert0@gmail.com" method="post">
+                    <input type="hidden" name="_subject" value="New M-Robotics website inquiry">
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden>
                     <!-- Labels stay visible for clarity and accessibility. -->
                     <div class="form-field">
                         <label for="name">Name</label>
-                        <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name">
+                        <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
                     </div>
 
                     <div class="form-field">
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+                        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
                     </div>
 
                     <div class="form-field">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Tell us about your project"></textarea>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell us about your project" required></textarea>
                     </div>
 
                     <button class="button button--primary" type="submit">Submit</button>
-                    <p class="form-note" data-form-note aria-live="polite">This form is a static interface and does not send messages yet.</p>
+                    <p class="form-note">Your message will be sent securely to M-Robotics.</p>
                 </form>
             </div>
         </section>

@@ -2,15 +2,13 @@
  * M-Robotics static site JavaScript
  * --------------------------------------------------------------------------
  * This file intentionally uses vanilla JavaScript only. It handles the mobile
- * navigation menu, a subtle sticky-header state, and the static contact form UI.
+ * navigation menu, a subtle sticky-header state, and project interactions.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("[data-header]");
     const navToggle = document.querySelector("[data-nav-toggle]");
     const navMenu = document.querySelector("[data-nav-menu]");
-    const contactForm = document.querySelector(".contact-form");
-    const formNote = document.querySelector("[data-form-note]");
     const aboutToggle = document.querySelector("[data-about-toggle]");
     const aboutMore = document.querySelector("[data-about-more]");
     const revealElements = document.querySelectorAll("[data-reveal]");
@@ -215,14 +213,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /*
-     * The contact form is intentionally static. Preventing submission avoids a
-     * dead GitHub Pages POST and gives visitors immediate, honest feedback.
-     */
-    if (contactForm && formNote) {
-        contactForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-            formNote.textContent = "Thanks for your interest. Please email Gu4lbert0@gmail.com to send your message.";
-        });
-    }
 });
