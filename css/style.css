@@ -530,6 +530,16 @@ p {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.portfolio-category + .portfolio-category {
+    margin-top: 64px;
+}
+
+.portfolio-category > h2 {
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-line);
+}
+
 .projects-page .project-card--large .project-card__body {
     padding: 22px;
 }
