@@ -602,7 +602,7 @@ p {
 .project-card img {
     width: 100%;
     aspect-ratio: 16 / 10;
-    object-fit: cover;
+    object-fit: contain;
     background: var(--color-soft);
 }
 
@@ -651,7 +651,7 @@ p {
 .project-detail-hero__image img {
     width: 100%;
     aspect-ratio: 16 / 11;
-    object-fit: cover;
+    object-fit: contain;
     cursor: zoom-in;
 }
 

@@ -20,12 +20,12 @@ const loadThreeModules = () => {
     return threeModulesPromise;
 };
 
-const frameObject = (THREE, camera, controls, object) => {
+const frameObject = (THREE, camera, controls, object, displayScale = 1) => {
     const box = new THREE.Box3().setFromObject(object);
     const size = box.getSize(new THREE.Vector3());
     const center = box.getCenter(new THREE.Vector3());
     const maxDimension = Math.max(size.x, size.y, size.z);
-    const distance = (maxDimension / (2 * Math.tan((camera.fov * Math.PI) / 360))) * 1.85;
+    const distance = ((maxDimension / (2 * Math.tan((camera.fov * Math.PI) / 360))) * 1.85) / displayScale;
 
     object.position.sub(center);
     camera.position.set(distance * 0.18, distance * 1.45, distance * 0.42);
@@ -190,7 +190,8 @@ const startViewer = async (stage, modelSource) => {
 
             viewer.model = gltf.scene;
             scene.add(gltf.scene);
-            frameObject(THREE, camera, controls, gltf.scene);
+            const displayScale = stage.classList.contains("model-preview--modal") ? 2 : 1;
+            frameObject(THREE, camera, controls, gltf.scene, displayScale);
             status?.remove();
         },
         undefined,
